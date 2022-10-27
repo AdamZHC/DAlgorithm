@@ -6,14 +6,6 @@ import java.math.BigInteger;
 public class HeapSort {
 
     static void sort(int[] tree) {
-        BigInteger bi = new BigInteger("123");
-        List<Integer> l = new ArrayList<>();
-        Vector<Integer> vector = new Vector<>();
-        TreeSet<Integer> ts = new TreeSet<>();
-        StringBuilder sb = new StringBuilder("");
-        Random r = new Random();
-        r.nextDouble();
-        Scanner in = new Scanner(System.in);
         int n = tree.length;
         initHeap(tree);
         for(int i = n - 1; i > 0; --i) {
@@ -43,7 +35,7 @@ public class HeapSort {
         //此时我就不需要关注另外一个点
         //对于完全二叉树来说的叶节
         if(i > n / 2 - 1) return;
-        int swapIdx = i * 2 + 2 > n - 1 ? i * 2 + 2 : (tree[i * 2 + 1] > tree[i * 2 + 2] ? i * 2 + 1 : i * 2 + 2);
+        int swapIdx = i * 2 + 2 > n - 1 ? i * 2 + 1 : (tree[i * 2 + 1] > tree[i * 2 + 2] ? i * 2 + 1 : i * 2 + 2);
         if(tree[i] < tree[swapIdx]){
             //异或交换
             tree[i] = tree[swapIdx] ^ tree[i];
