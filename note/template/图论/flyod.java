@@ -1,6 +1,9 @@
 package template.图论;
 
-class Main {
+import java.util.Arrays;
+import java.util.Scanner;
+
+class flyod {
 	//flyod
 	//一般图的邻接矩阵的处理也是和这个是类似的
 	//对于一般地，只需要把有边的矩阵分配边就可以了

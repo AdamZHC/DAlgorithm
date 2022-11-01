@@ -5,9 +5,9 @@ import java.util.*;
 class Main {
 	static Scanner in = new Scanner(System.in);
 	static int n;
-	static T t;
+	static T3 t;
 	//dp相关的
-	int[] d1, d2, p, up;
+	static int[] d1, d2, p, up;
 	public static void main(String[] args) {
 		read();
 
@@ -49,7 +49,7 @@ class Main {
 				up[to] = Math.max(d2[root], up[root]) + wgt;
 			else
 				up[to] = Math.max(d1[root], up[root]) + wgt;
-			dfs2(to, root) 
+			dfs2(to, root);
 		}
 	}
 
@@ -59,7 +59,7 @@ class Main {
 		d2 = new int[n + 1];
 		up = new int[n + 1];
 		p = new int[n + 1];
-		t = new T(n << 1, n);
+		t = new T3(n << 1, n);
 		for(int i = 0; i < n - 1; ++i) {
 			int ui = in.nextInt(), vi = in.nextInt(), wi = in.nextInt();
 			t.add(ui, vi, wi);
@@ -68,10 +68,10 @@ class Main {
 	}
 }
 
-class T {
+class T3 {
 	int[] to, nex, wgt, hd;
 	int idx;
-	public T (int m, int n) {
+	public T3 (int m, int n) {
 		to = new int[m]; nex = new int[m]; wgt = new int[m];
 		hd = new int[n + 1];
 		Arrays.fill(hd, -1);

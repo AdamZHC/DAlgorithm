@@ -4,7 +4,7 @@ import java.util.*;
 class Main {
 	static Scanner in = new Scanner(System.in);
 	static int n, m, INF = 0x7fffffff;
-	static G gz, gf;
+	static G1 gz, gf;
 	public static void main(String[] args) {
 
 		read();
@@ -22,7 +22,7 @@ class Main {
 		System.out.println(ans);
 	} 
 
-	static int[] dij(G g) {
+	static int[] dij(G1 g) {
 		int[] dis = new int[n + 1];
 		boolean[] vis = new boolean[n + 1];
 		PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
@@ -56,7 +56,7 @@ class Main {
 	static void read() {
 		n = in.nextInt();
 		m = in.nextInt();
-		g = new G(n, m);
+		gz = new G1(n, m);
 		for(int i = 0; i < m; ++i) {
 			int u = in.nextInt(), v = in.nextInt(), w = in.nextInt(); 
 			gz.add(u, v, w);
@@ -64,11 +64,11 @@ class Main {
 		}
 	}
 }
-class G {
+class G1 {
 	int[] to, nex, wgt, hd;
 	int idx;
 
-	public G (int n, int m) {
+	public G1 (int n, int m) {
 		to = new int[m];
 		nex = new int[m];
 		wgt = new int[m];
