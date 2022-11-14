@@ -14,10 +14,6 @@ public class DijkstraDemo {
      * 放到一个优先队列（堆）里面实现的
      * */
     public static void main(String[] args) {
-        Queue<Integer> q = new LinkedList<>();
-        for(int a : q) {
-
-        }
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int m = in.nextInt();
